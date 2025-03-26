@@ -1,7 +1,7 @@
 /* Base Styles */
 :root {
-  --primary-color: #4a6cf7;
-  --primary-dark: #3a5ce5;
+  --primary-color: #e46713;
+  --primary-dark: #e46713;
   --secondary-color: #6c757d;
   --success-color: #28a745;
   --danger-color: #dc3545;
@@ -27,6 +27,10 @@ body {
   background-color: var(--body-bg);
   color: var(--text-color);
   line-height: 1.6;
+}
+.text-primary {
+    --bs-text-opacity: 1;
+    color: rgb(228 103 21) !important;
 }
 
 a {

@@ -230,3 +230,129 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle proceed button clicks (open PDF)
+            const proceedButtons = document.querySelectorAll('.proceed-btn');
+            proceedButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pdfUrl = this.getAttribute('data-pdf');
+                    window.open(pdfUrl, '_blank');
+                });
+            });
+
+            // Handle report title clicks (also open PDF)
+            const reportTitles = document.querySelectorAll('.report-title');
+            reportTitles.forEach(title => {
+                title.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const reportId = this.getAttribute('data-report');
+                    const pdfUrl = document.querySelector(`.proceed-btn[data-report="${reportId}"]`).getAttribute('data-pdf');
+                    window.open(pdfUrl, '_blank');
+                });
+            });
+
+            // Handle comment button clicks
+            const commentButtons = document.querySelectorAll('.comment-btn');
+            const reportIdInput = document.getElementById('reportId');
+            
+            commentButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const reportId = this.getAttribute('data-report');
+                    reportIdInput.value = reportId;
+                    
+                    // Update modal title with report name
+                    const reportName = this.closest('.report-item').querySelector('.report-title').textContent;
+                    document.getElementById('commentModalLabel').textContent = `Add Comment for ${reportName}`;
+                });
+            });
+
+            // Handle comment submission
+            const submitButton = document.getElementById('submitComment');
+            submitButton.addEventListener('click', function() {
+                const reportId = document.getElementById('reportId').value;
+                const commentText = document.getElementById('commentText').value;
+                
+                if (commentText.trim() === '') {
+                    alert('Please enter a comment before submitting.');
+                    return;
+                }
+                
+                // Here you would typically send the data to your server
+                console.log('Submitting comment for report:', reportId);
+                console.log('Comment:', commentText);
+                
+                // Reset form and close modal
+                document.getElementById('commentForm').reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('commentModal'));
+                modal.hide();
+                
+                // Show success message (optional)
+                alert('Comment submitted successfully!');
+            });
+        });
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle proceed button clicks (open PDF)
+            const proceedButtons = document.querySelectorAll('.proceed-btn');
+            proceedButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pdfUrl = this.getAttribute('data-pdf');
+                    window.open(pdfUrl, '_blank');
+                });
+            });
+
+            // Handle report title clicks (also open PDF)
+            const reportTitles = document.querySelectorAll('.report-title');
+            reportTitles.forEach(title => {
+                title.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const reportId = this.getAttribute('data-report');
+                    const pdfUrl = document.querySelector(`.proceed-btn[data-report="${reportId}"]`).getAttribute('data-pdf');
+                    window.open(pdfUrl, '_blank');
+                });
+            });
+
+            // Handle comment button clicks
+            const commentButtons = document.querySelectorAll('.comment-btn');
+            const reportIdInput = document.getElementById('reportId');
+            
+            commentButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const reportId = this.getAttribute('data-report');
+                    reportIdInput.value = reportId;
+                    
+                    // Update modal title with report name
+                    const reportName = this.closest('.report-item').querySelector('.report-title').textContent;
+                    document.getElementById('commentModalLabel').textContent = `Add Comment for ${reportName}`;
+                });
+            });
+
+            // Handle comment submission
+            const submitButton = document.getElementById('submitComment');
+            submitButton.addEventListener('click', function() {
+                const reportId = document.getElementById('reportId').value;
+                const commentText = document.getElementById('commentText').value;
+                
+                if (commentText.trim() === '') {
+                    alert('Please enter a comment before submitting.');
+                    return;
+                }
+                
+                // Here you would typically send the data to your server
+                console.log('Submitting comment for report:', reportId);
+                console.log('Comment:', commentText);
+                
+                // Reset form and close modal
+                document.getElementById('commentForm').reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('commentModal'));
+                modal.hide();
+                
+                // Show success message (optional)
+                alert('Comment submitted successfully!');
+            });
+        });
+    
+
