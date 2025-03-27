@@ -254,19 +254,19 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             // Handle comment button clicks
-            const commentButtons = document.querySelectorAll('.comment-btn');
-            const reportIdInput = document.getElementById('reportId');
+            // const commentButtons = document.querySelectorAll('.comment-btn');
+            // const reportIdInput = document.getElementById('reportId');
             
-            commentButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const reportId = this.getAttribute('data-report');
-                    reportIdInput.value = reportId;
+            // commentButtons.forEach(button => {
+            //     button.addEventListener('click', function() {
+            //         const reportId = this.getAttribute('data-report');
+            //         reportIdInput.value = reportId;
                     
-                    // Update modal title with report name
-                    const reportName = this.closest('.report-item').querySelector('.report-title').textContent;
-                    document.getElementById('commentModalLabel').textContent = `Add Comment for ${reportName}`;
-                });
-            });
+            //         // Update modal title with report name
+            //         const reportName = this.closest('.report-item').querySelector('.report-title').textContent;
+            //         document.getElementById('commentModalLabel').textContent = `Add Comment for ${reportName}`;
+            //     });
+            // });
 
             // Handle comment submission
             const submitButton = document.getElementById('submitComment');
