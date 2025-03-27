@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
       },
       report3: {
-        title: "Annual Report 2023",
+        title: "Q3 Financial Report",
         sections: [
           {
             title: "Letter to Shareholders",
