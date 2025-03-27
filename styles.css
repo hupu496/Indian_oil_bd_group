@@ -124,8 +124,6 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
   overflow: auto;
 }
 
@@ -252,9 +250,9 @@ body {
   transition: background-color 0.2s;
 }
 
-.detail-list .list-group-item:hover {
+/* .detail-list .list-group-item:hover {
   background-color: rgba(13, 110, 253, 0.1);
-}
+} */
 
 /* Report list hover effect */
 .report-list a {
